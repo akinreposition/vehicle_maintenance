@@ -1,0 +1,82 @@
+{
+  "logs": [
+    {
+      "id": 1,
+      "message": "Changed the oil filters on Toyota corrolla 2005",
+      "attention": false,
+      "date": "02-05-2012",
+      "technician": "Musa Mohammed"
+    },
+    {
+      "id": 2,
+      "message": "Engine servicing on Acura TX 2007",
+      "attention": true,
+      "date": "12-06-2012",
+      "technician": "Fatai Balogun"
+    },
+    {
+      "id": 3,
+      "message": "Gear servicing of volkwagen golf 2007",
+      "attention": true,
+      "date": "22-02-2019",
+      "technician": "sokota Adewale"
+    }
+  ],
+  "vehicles": [
+    {
+      "id": 1,
+      "vehicleName": "Toyota",
+      "model": "corolla",
+      "year": 2005,
+      "mileage": 5000
+    },
+    {
+      "id": 2,
+      "vehicleName": "Acura",
+      "model": "Tx",
+      "year": 2007,
+      "mileage": 5000
+    },
+    {
+      "id": 3,
+      "vehicleName": "volkwagen",
+      "model": "golf",
+      "year": 2007,
+      "mileage": 5000
+    }
+  ],
+  "technicians": [
+    {
+      "id": 1,
+      "firstName": "Musa",
+      "lastName": "Mohammed"
+    },
+    {
+      "id": 2,
+      "firstName": "Fatai",
+      "lastName": "Balogun"
+    },
+    {
+      "id": 3,
+      "firstName": "Sokoto",
+      "lastName": "Adewale"
+    }
+  ],
+  "next-maintenance": [
+    {
+      "vehicleId": 1,
+      "nextServicing": "3 months from now",
+      "mileage": 10000
+    },
+    {
+      "vehicleId": 2,
+      "nextServicing": "4 months from now",
+      "mileage": 15000
+    },
+    {
+      "vehicleId": 3,
+      "nextServicing": "5 months from now",
+      "mileage": 20000
+    }
+  ]
+}
