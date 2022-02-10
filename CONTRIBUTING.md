@@ -6,6 +6,8 @@ Please before you push your codes to the repository make sure you pull from the 
 git pull origin main
 ```
 
+To run the app use
+
 ```
 npm run dev
 ```
@@ -15,6 +17,7 @@ npm run dev
 This process here should be able to guide you on how to contribute effectively to this project, follow the steps below. You should not be new to the git workflow process however if you still are, the guide should still be able to help you through the process.
 
 ## Main is the default branch.
+
 - Clone the repository.
 
 ```
@@ -48,13 +51,14 @@ This way you can resolve conflicts from your local computer even before pushing 
 ```
 git add .
 ```
+
 - then make your commits
 
 ```
 git commit -m "your message"
 ```
 
-  Write good commit messages, this is very important, so people reviewing can know what your fix, feature e.t.c. is doing
+Write good commit messages, this is very important, so people reviewing can know what your fix, feature e.t.c. is doing
 
 - Push your codes to the new branch
 
@@ -62,7 +66,7 @@ git commit -m "your message"
 git push origin (name-of-branch)
 ```
 
-Make your Pull request from that branch  o the develop branch repo and wait for it to be merged.
+Make your Pull request from that branch o the develop branch repo and wait for it to be merged.
 
 Write good commit messages, this is very important, so people reviewing can know what your fix, feature e.t.c. is doing
 Your PR should carry the story / task URL (instruction from above).
