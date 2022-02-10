@@ -1,10 +1,12 @@
-
+import Home from './components/pages/Home';
+import About from './components/pages/About';
 import './App.css';
 
 function App() {
   return (
-    <div className='App-header'>
-      <h2>Welcome to Vehicle logger <strong>Version 0.0.1</strong></h2>
+    <div >
+      <Home />
+      <About />
     </div>
   );
 }

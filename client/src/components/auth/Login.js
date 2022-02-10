@@ -1,0 +1,69 @@
+import React, { useState } from "react";
+
+
+const Login = (props) => {
+
+
+  
+  const [user, setUser] = useState({
+    email: "",
+    password: "",
+  });
+
+  const { email, password } = user;
+
+  const onChange = (e) => setUser({ ...user, [e.target.name]: e.target.value });
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    if (email === "" || password === "") {
+      // setAlert("Please fill fields", "danger");
+    } else {
+      // loginUser({
+      //   email,
+      //   password,
+      // });
+    }
+    setUser({
+      email: "",
+      password: "",
+    });
+  };
+  return (
+    <div className="form-container">
+      <h1>
+        Account <span className="text-primary">Login</span>
+      </h1>
+      <form onSubmit={onSubmit}>
+        <div className="form-group">
+          <input
+            type='email'
+            placeholder="Email"
+            name="email"
+            value={email}
+            onChange={onChange}
+            required
+            minLength="6"
+          />
+        </div>
+        <div className="form-group">
+          <input
+            type='password'
+            placeholder="Password"
+            name="password"
+            value={password}
+            onChange={onChange}
+            required
+            minLength="6"
+          />
+        </div>
+        <input
+          type="submit"
+          value="Login"
+          className="btn btn-primary btn-block"
+        />
+      </form>
+    </div>
+  );
+};
+export default Login;
