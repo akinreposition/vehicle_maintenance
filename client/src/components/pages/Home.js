@@ -1,11 +1,16 @@
 import React from "react"
+import Logs from "../logs/Logs";
+// import RoutlineChecks from "../routlines/RoutlineChecks"
+import AddBtn from "../layout/AddBtn";
 
 
 const Home = () => {
   
   return (
-    <div className="grid-2">
-      <h2>Welcome to Vehicle logger <strong>Version 0.0.1</strong></h2>
+    <div className='container'>
+      {/* <RoutlineChecks /> */}
+      <AddBtn />
+      <Logs />
     </div>
   );
 };

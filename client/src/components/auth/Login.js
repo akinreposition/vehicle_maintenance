@@ -2,9 +2,6 @@ import React, { useState } from "react";
 
 
 const Login = (props) => {
-
-
-  
   const [user, setUser] = useState({
     email: "",
     password: "",

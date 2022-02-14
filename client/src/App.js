@@ -1,12 +1,10 @@
-import Home from './components/pages/Home';
-import About from './components/pages/About';
+import Main from './Main';
 import './App.css';
 
-function App() {
+const App = () => {
   return (
     <div >
-      <Home />
-      <About />
+      <Main />
     </div>
   );
 }
