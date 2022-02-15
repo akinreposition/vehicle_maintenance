@@ -62,19 +62,25 @@
       "lastName": "Adewale"
     }
   ],
-  "next-maintenance": [
+  "maintenances": [
     {
-      "vehicleId": 1,
+      "id": 1,
+      "driver": "Emeka",
+      "attention": true,
       "nextServicing": "3 months from now",
       "mileage": 10000
     },
     {
-      "vehicleId": 2,
+      "id": 2,
+      "driver": "feyi",
+      "attention": false,
       "nextServicing": "4 months from now",
       "mileage": 15000
     },
     {
-      "vehicleId": 3,
+      "id": 3,
+      "driver": "rasaq",
+      "attention": false,
       "nextServicing": "5 months from now",
       "mileage": 20000
     }
