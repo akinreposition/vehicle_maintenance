@@ -31,7 +31,7 @@ const RountineItem =({ maintenance }) => {
 }
 
 RountineItem.propTypes = {
-    RoutineCheck: PropTypes.object.isRequired
+    RountineItem: PropTypes.object.isRequired
 }
 
 export default RountineItem

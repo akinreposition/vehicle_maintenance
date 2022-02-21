@@ -14,7 +14,7 @@ const RountlineForm = () => {
 //   const { tyres, sideMirrors, engineOil, gearOil, radiator, seatBelt } =
 //     vehicleChecks;
 
-    const { type } = vehicleChecks;
+    // const { type } = vehicleChecks;
 
   const onChange = (e) =>
     setVehicleChecks({ ...vehicleChecks, [e.target.name]: e.target.value });
