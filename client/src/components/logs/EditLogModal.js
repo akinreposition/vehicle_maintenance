@@ -13,7 +13,7 @@ const EditLogModal = () => {
     } else {
       console.log(message, technician, attention);
 
-      // Clear Fields
+      
       setMessage("");
       setTechnician("");
       setAttention(false);
