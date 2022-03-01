@@ -1,6 +1,6 @@
 import React from "react";
 // import { Link } from 'react-router-dom';
-import SearchBar from "./SearchBar";
+
 
 const NavBar = () => {
     // const handleLogout = () => {
@@ -33,9 +33,8 @@ const NavBar = () => {
   return (
     <div className="navbar bg-primary">
             <h6>
-                Maintenance Log
+                Vehicle Maintenance Log
             </h6>
-            <SearchBar />
             <ul>
               {/* {isAuthenticated ? authLinks : guestLinks}         */}
             </ul>

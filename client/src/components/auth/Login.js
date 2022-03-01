@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-
 const Login = (props) => {
   const [user, setUser] = useState({
     email: "",
@@ -15,11 +14,10 @@ const Login = (props) => {
     e.preventDefault();
     if (email === "" || password === "") {
       // setAlert("Please fill fields", "danger");
+      prompt("Please fill fields");
     } else {
-      // loginUser({
-      //   email,
-      //   password,
-      // });
+      console.log(email, password);
+      // loginUser(  email, password );
     }
     setUser({
       email: "",
@@ -34,7 +32,7 @@ const Login = (props) => {
       <form onSubmit={onSubmit}>
         <div className="form-group">
           <input
-            type='email'
+            type="email"
             placeholder="Email"
             name="email"
             value={email}
@@ -45,7 +43,7 @@ const Login = (props) => {
         </div>
         <div className="form-group">
           <input
-            type='password'
+            type="password"
             placeholder="Password"
             name="password"
             value={password}

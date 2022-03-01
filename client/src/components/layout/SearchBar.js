@@ -4,10 +4,10 @@ import React from "react";
 const SearchBar = () => {
   return (
     <nav style={{ marginBottom: "32px" }} className="wine">
-      <div>
+      <div className="nav-wrapper">
         <form>
           <div className="input-field">
-            <input id="search" type="search" />
+            <input id="search" type="search" required/>
             <label className="label-icon" htmlFor="search">
               <i className="material-icons">search</i>
             </label>
