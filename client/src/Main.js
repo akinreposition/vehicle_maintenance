@@ -11,7 +11,7 @@ import About from "./components/pages/About";
 import RountlineChecks from "./components/maintenances/MaintenanceChecks";
 import { Provider } from "react-redux";
 import store from "./store";
-
+import Footer from "./components/layout/Footer";
 
 const Main = () => {
   useEffect(() => {
@@ -25,13 +25,14 @@ const Main = () => {
           <Routes>
             {/* <PrivateRoute path='/' element={<Home />} /> */}
             <Route path="/" element={<LandingPage />} />
-            <Route path="/home" element={<Home/>} />
-            <Route path="/maintenance" element={ <RountlineChecks />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/maintenance" element={<RountlineChecks />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
             <Route path="/about" element={<About />} />
           </Routes>
         </Router>
+        <Footer />
       </Fragment>
     </Provider>
   );
