@@ -1,0 +1,37 @@
+{
+  "name": "vehicle_maintenance",
+  "version": "1.0.0",
+  "description": "This a simple vehicle maintenance & logger apllication",
+  "main": "sever.js",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "concurrently": "^7.0.0",
+    "config": "^3.3.7",
+    "express": "^4.17.3",
+    "express-validator": "^6.14.0",
+    "json-server": "^0.17.0",
+    "jsonwebtoken": "^8.5.1",
+    "materialize-css": "^1.0.0",
+    "mongoose": "^6.2.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "json-server": "json-server --watch db.json --port 5530",
+    "dev": "concurrently \"npm start\" \"npm run json-server\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akinreposition/vehicle_maintenance.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akinreposition/vehicle_maintenance/issues"
+  },
+  "homepage": "https://github.com/akinreposition/vehicle_maintenance#readme"
+}

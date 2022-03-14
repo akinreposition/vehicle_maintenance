@@ -97,9 +97,7 @@ const MaintenanceForm = () => {
 
         <div className="input-field col s12">
           <select onChange={(e) => setBrakes(e.target.value)}>
-            <option value="" disabled selected>
-              Choose your option
-            </option>
+            <option value="">Choose your option</option>
             <option value="Excellent">Excellent</option>
             <option value="Very Good">Very Good</option>
             <option value="Good">Good</option>
@@ -109,34 +107,34 @@ const MaintenanceForm = () => {
           <label>Brakes</label>
         </div>
         {/* Switch  */}
-        <div class="switch">
+        <div className="switch">
           <span>Head Lights </span>{" "}
           <label>
             Off
             <input type="checkbox" />
-            <span class="lever"></span>
+            <span className="lever"></span>
             On
           </label>
         </div>
-        <div class="switch">
+        <div className="switch">
           <span>Brake Lights </span>{" "}
           <label>
             Off
             <input type="checkbox" />
-            <span class="lever"></span>
+            <span className="lever"></span>
             On
           </label>
         </div>
-        <div class="switch">
+        <div className="switch">
           <span>Caution Lights </span>{" "}
           <label>
             Off
             <input type="checkbox" />
-            <span class="lever"></span>
+            <span className="lever"></span>
             On
           </label>
         </div>
-        <div class="switch">
+        <div className="switch">
           <span>Reverse Lights </span>{" "}
           <label>
             Off

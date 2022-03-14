@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import SearchBar from "../layout/SearchBar";
 import Logs from "../logs/Logs";
 import AddBtn from "../layout/AddBtn";
@@ -9,7 +9,7 @@ import TechListModal from "../techs/TechListModal";
 
 const Home = () => {
   return (
-    <Fragment>
+    <div>
       <SearchBar />
       <div className="container">
         <AddBtn />
@@ -19,7 +19,7 @@ const Home = () => {
         <TechListModal />
         <Logs />
       </div>
-    </Fragment>
+    </div>
   );
 };
 export default Home;

@@ -20,6 +20,13 @@
       "attention": true,
       "date": "22-02-2019",
       "technician": "sokota Adewale"
+    },
+    {
+      "attention": true,
+      "message": "Honda civil 2005 has been fixed",
+      "technician": "Musa mohammed",
+      "date": "2022-03-08T12:26:57.285Z",
+      "id": 4
     }
   ],
   "vehicles": [
@@ -83,6 +90,13 @@
       "attention": false,
       "nextServicing": "5 months from now",
       "mileage": 20000
+    }
+  ],
+  "users": [
+    {
+      "id":1,
+      "email":"musa@yahoo.com",
+      "password": "0123456789"
     }
   ]
 }

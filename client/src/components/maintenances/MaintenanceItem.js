@@ -1,7 +1,7 @@
 import React from "react";
 import RountlineForm from "./MaintenanceForm";
 import Moment from "react-moment";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 
 const MaintenanceItem = ({ maintenance }) => {
   return (
@@ -32,8 +32,8 @@ const MaintenanceItem = ({ maintenance }) => {
   );
 };
 
-MaintenanceItem.propTypes = {
-  MaintenanceItem: PropTypes.object.isRequired,
-};
+// MaintenanceItem.propTypes = {
+//   MaintenanceItem: PropTypes.object.isRequired,
+// };
 
 export default MaintenanceItem;

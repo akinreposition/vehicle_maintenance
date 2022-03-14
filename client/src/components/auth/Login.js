@@ -1,6 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { connect } from "react-redux";
+import { loginUser, clearErrors } from "../../actions/authAction";
+import PropTypes from "prop-types";
 
-const Login = (props) => {
+const Login = ({
+  authUser: { token, isAuthenticated, error },
+  loginUser,
+  props,
+}) => {
+  useEffect(() => {
+    if (isAuthenticated) {
+      useNavigate.push("/");
+    }
+
+    if (error === "Invalid Credentials") {
+      // setAlert(error, "danger");
+      clearErrors();
+    }
+    //   eslint-disable-next-line
+  }, [error, isAuthenticated, useNavigate]);
+
   const [user, setUser] = useState({
     email: "",
     password: "",
@@ -14,10 +34,13 @@ const Login = (props) => {
     e.preventDefault();
     if (email === "" || password === "") {
       // setAlert("Please fill fields", "danger");
-      prompt("Please fill fields");
     } else {
-      console.log(email, password);
-      // loginUser(  email, password );
+      const formData  = {
+        email,
+        password
+      }
+      console.log(formData);
+      loginUser(formData);
     }
     setUser({
       email: "",
@@ -26,9 +49,9 @@ const Login = (props) => {
   };
   return (
     <div className="form-container">
-      <h1>
+      <h3>
         Account <span className="text-primary">Login</span>
-      </h1>
+      </h3>
       <form onSubmit={onSubmit}>
         <div className="form-group">
           <input
@@ -61,4 +84,13 @@ const Login = (props) => {
     </div>
   );
 };
-export default Login;
+
+Login.prototype = {
+  login: PropTypes.object.isRequired,
+  loginUser: PropTypes.func.isRequired,
+  clearErrors: PropTypes.func.isRequired,
+};
+const mapStateToProps = (state) => ({
+  authUser: state.authUser,
+});
+export default connect(mapStateToProps, { loginUser })(Login);

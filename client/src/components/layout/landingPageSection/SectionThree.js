@@ -15,15 +15,14 @@ const SectionThree = () => {
           </li>
           <li>Inform Insurance - for road traffic related incident </li>
           <li>
-            Line Manager to inform -Safety/Security/Legal/Insurance/Functional
-            Head/ Director (immediately){" "}
+            Line Manager to inform -Safety/Security/Legal/Insurance{" "}
           </li>
           <li>
             The Functional Head / Director notifies the Managing Director(immediately)
             (within the hour). {" "}
           </li>
-          <li>The Managing Director notifies Group Leadership Team & MD Diageo Africa (within the Hour) {" "}</li>
-          <li>Africa Execs are notified with 24 hours</li>
+          {/* <li>The Managing Director notifies Group Leadership Team & MD Diageo Africa (within the Hour) {" "}</li>
+          <li>Africa Execs are notified with 24 hours</li> */}
         </ol>
       </section>
     </div>
