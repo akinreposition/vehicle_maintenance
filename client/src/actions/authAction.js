@@ -41,10 +41,10 @@ export const register = (formData) => async (dispatch) => {
   };
 
   try {
-    const res = await fetch.post("/api/users",  config);
-    
+    const res = await fetch.post("/api/users", config);
+
     const data = await res.json();
-    
+
     dispatch({
       type: REGISTER_SUCCESS,
       payload: data,
@@ -54,7 +54,7 @@ export const register = (formData) => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: REGISTER_FAIL,
-      payload: error.response.data.msg,
+      payload: error.response,
     });
   }
 };
@@ -65,12 +65,12 @@ export const loginUser = (formData) => async (dispatch) => {
     setLoading();
 
     const res = await fetch("/users", {
-        method: "POST",
-        body: JSON.stringify(formData),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      method: "POST",
+      body: JSON.stringify(formData),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
 
     const data = await res.json();
 

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { connect } from "react-router-dom";
+import { connect } from "react-redux";
 import { register } from "../../actions/authAction";
 import PropTypes from "prop-types";
 
@@ -7,37 +7,41 @@ const Register = ({
   authUser: { token, isAuthenticated, error },
   register,
 }) => {
-
   const [user, setUser] = useState({
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
     password: "",
     password2: "",
   });
 
-  const { name, email, password, password2 } = user;
+  const { firstName, lastName, email, password, password2 } = user;
 
   const onChange = (e) => setUser({ ...user, [e.target.name]: e.target.value });
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (name === "" || email === "" || password === "") {
+    if (
+      firstName === "" ||
+      lastName === "" ||
+      email === "" ||
+      password === ""
+    ) {
       // setAlert('Please enter all fields', 'danger');
-      prompt("Please enter all fields", "danger");
     } else if (password !== password2) {
       // setAlert('Passwords do not match', 'danger');
-      prompt("Password do not match", "danger");
     } else {
       const formData = {
-        name,
+        firstName,
+        lastName,
         email,
         password,
-        date: new Date()
-      }
+      };
       register(formData);
       console.log(formData);
       setUser({
-        name: "",
+        firstName: "",
+        lastName: "",
         email: "",
         password: "",
         password2: "",
@@ -47,16 +51,25 @@ const Register = ({
   return (
     <div className="form-container">
       <h1>
-        <span className="text-primary">Register</span>
-        New Account
+        <span className="text-primary">Register</span> Account
       </h1>
       <form onSubmit={onSubmit}>
         <div className="form-group">
           <input
             type="text"
-            name="name"
-            placeholder="Name"
-            value={name}
+            name="firstName"
+            placeholder="First Name"
+            value={firstName}
+            onChange={onChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <input
+            type="text"
+            name="lastName"
+            placeholder="Last Name"
+            value={lastName}
             onChange={onChange}
             required
           />
@@ -79,7 +92,8 @@ const Register = ({
             value={password}
             onChange={onChange}
             required
-            minLength="6"
+            minLength="8"
+            maxLength="12"
           />
         </div>
         <div className="form-group">
@@ -91,6 +105,7 @@ const Register = ({
             onChange={onChange}
             required
             minLength="6"
+            maxLength="12"
           />
         </div>
         <button
@@ -109,7 +124,7 @@ const Register = ({
 Register.prototype = {
   Register: PropTypes.object.isRequired,
   register: PropTypes.func.isRequired,
-}
+};
 const mapStateToProps = (state) => ({
   authUser: state.authUser,
 });
