@@ -3,23 +3,27 @@ import { useNavigate } from "react-router-dom";
 import { connect } from "react-redux";
 import { loginUser, clearErrors } from "../../actions/authAction";
 import PropTypes from "prop-types";
+import M from 'materialize-css/dist/js/materialize.min.js';
 
 const Login = ({
   authUser: { token, isAuthenticated, error },
   loginUser,
   props,
 }) => {
+  const navigate = useNavigate();
   useEffect(() => {
     if (isAuthenticated) {
-      useNavigate.push("/");
+      navigate("/home");
     }
 
     if (error === "Invalid Credentials") {
       // setAlert(error, "danger");
+      M.toast({html: 'Invalid Credentials'});
+
       clearErrors();
     }
     //   eslint-disable-next-line
-  }, [error, isAuthenticated, useNavigate]);
+  }, [error, isAuthenticated, navigate]);
 
   const [user, setUser] = useState({
     email: "",
@@ -34,6 +38,7 @@ const Login = ({
     e.preventDefault();
     if (email === "" || password === "") {
       // setAlert("Please fill fields", "danger");
+      M.toast({html: 'Please fill fields'});
     } else {
       const formData  = {
         email,

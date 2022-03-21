@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { register } from "../../actions/authAction";
 import PropTypes from "prop-types";
+import M from "materialize-css/dist/js/materialize.min.js";
 
 const Register = ({
   authUser: { token, isAuthenticated, error },
   register,
 }) => {
+  const navigate = useNavigate();
   const [user, setUser] = useState({
     firstName: "",
     lastName: "",
@@ -28,8 +31,10 @@ const Register = ({
       password === ""
     ) {
       // setAlert('Please enter all fields', 'danger');
+      M.toast({ html: "Please enter all fields" });
     } else if (password !== password2) {
       // setAlert('Passwords do not match', 'danger');
+      M.toast({ html: "Passwords do not match!" });
     } else {
       const formData = {
         firstName,
@@ -47,12 +52,15 @@ const Register = ({
         password2: "",
       });
     }
+    setTimeout(() => {
+      navigate("/login");
+    }, 5000);
   };
   return (
     <div className="form-container">
-      <h1>
+      <h3>
         <span className="text-primary">Register</span> Account
-      </h1>
+      </h3>
       <form onSubmit={onSubmit}>
         <div className="form-group">
           <input

@@ -15,18 +15,11 @@
       "technician": "Fatai Balogun"
     },
     {
-      "id": 3,
-      "message": "Gear servicing of volkwagen golf 2007",
-      "attention": true,
-      "date": "22-02-2019",
-      "technician": "sokota Adewale"
-    },
-    {
-      "attention": true,
-      "message": "Honda civil 2005 has been fixed",
+      "attention": false,
+      "message": "body work",
       "technician": "Musa mohammed",
-      "date": "2022-03-08T12:26:57.285Z",
-      "id": 4
+      "date": "2022-03-21T12:30:14.564Z",
+      "id": 3
     }
   ],
   "vehicles": [
@@ -92,11 +85,23 @@
       "mileage": 20000
     }
   ],
+  "newUser": [
+    {
+      "id": 1,
+      "email": "musa@yahoo.com",
+      "password": "0123456789"
+    }
+  ],
   "users": [
     {
-      "id":1,
-      "email":"musa@yahoo.com",
+      "id": 1,
+      "email": "tunde@yahoo.com",
       "password": "0123456789"
+    },
+    {
+      "email": "firstlast@mail.com",
+      "password": "firstlast",
+      "id": 2
     }
   ]
 }
