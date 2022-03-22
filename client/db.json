@@ -20,6 +20,9 @@
       "technician": "Musa mohammed",
       "date": "2022-03-21T12:30:14.564Z",
       "id": 3
+    },
+    {
+      "id": 4
     }
   ],
   "vehicles": [
@@ -102,6 +105,19 @@
       "email": "firstlast@mail.com",
       "password": "firstlast",
       "id": 2
+    },
+    {
+      "email": "firstlast@mail.com",
+      "password": "firstlast",
+      "id": 3
+    },
+    {
+      "email": "adameve@gmail.com",
+      "password": "adameve01",
+      "id": 4
+    },
+    {
+      "id": 5
     }
   ]
 }

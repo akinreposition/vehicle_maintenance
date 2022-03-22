@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { connect } from "react-redux";
 import { loginUser, clearErrors } from "../../actions/authAction";
 import PropTypes from "prop-types";
-import M from 'materialize-css/dist/js/materialize.min.js';
+import M from "materialize-css/dist/js/materialize.min.js";
 
 const Login = ({
   authUser: { token, isAuthenticated, error },
@@ -13,12 +13,14 @@ const Login = ({
   const navigate = useNavigate();
   useEffect(() => {
     if (isAuthenticated) {
-      navigate("/home");
+      setTimeout(() => {
+        navigate("/home");
+      }, 5000);
     }
 
     if (error === "Invalid Credentials") {
       // setAlert(error, "danger");
-      M.toast({html: 'Invalid Credentials'});
+      M.toast({ html: "Invalid Credentials" });
 
       clearErrors();
     }
@@ -38,12 +40,12 @@ const Login = ({
     e.preventDefault();
     if (email === "" || password === "") {
       // setAlert("Please fill fields", "danger");
-      M.toast({html: 'Please fill fields'});
+      M.toast({ html: "Please fill fields" });
     } else {
-      const formData  = {
+      const formData = {
         email,
-        password
-      }
+        password,
+      };
       console.log(formData);
       loginUser(formData);
     }
