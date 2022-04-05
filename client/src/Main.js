@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import "materialize-css/dist/css/materialize.min.css";
 import M from "materialize-css/dist/js/materialize.min.js";
-import Home from "./components/pages/Home";
+import LogHome from "./components/pages/LogHome";
 import LandingPage from "./components/pages/LandingPage";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
@@ -24,7 +24,7 @@ const Main = () => {
           <Routes>
             {/* <PrivateRoute path='/' element={<Home />} /> */}
             <Route path="/" element={<LandingPage />} />
-            <Route path="/home" element={<Home />} />
+            <Route path="/logs" element={<LogHome />} />
             <Route path="/maintenance" element={<RountlineChecks />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />

@@ -5,7 +5,6 @@ import {
   ADD_LOG,
   SEARCH_LOGS,
   DELETE_LOG,
-  CLEAR_SEARCH,
   SET_CURRENT,
   CLEAR_CURRENT,
   UPDATE_LOG,
@@ -60,11 +59,6 @@ export const logReducer = (state = initialState, action) => {
         ...state,
         current: null,
       };
-    case CLEAR_SEARCH:
-      return {
-        ...state,
-        search: null,
-      }
     case SET_LOADING:
       return {
         ...state,

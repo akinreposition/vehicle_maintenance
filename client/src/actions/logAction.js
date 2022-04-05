@@ -5,7 +5,6 @@ import {
   ADD_LOG,
   SEARCH_LOGS,
   DELETE_LOG,
-  CLEAR_SEARCH,
   UPDATE_LOG,
   SET_CURRENT,
   CLEAR_CURRENT,
@@ -137,13 +136,6 @@ export const setCurrent = (log) => {
 export const clearCurrent = () => {
   return {
     type: CLEAR_CURRENT,
-  };
-};
-
-//  Clear current search log
-export const clearSearch = () => {
-  return {
-    type: CLEAR_SEARCH,
   };
 };
 
