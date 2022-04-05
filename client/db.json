@@ -46,6 +46,9 @@
       "id": 3,
       "firstName": "Sokoto",
       "lastName": "Adewale"
+    },
+    {
+      "id": 4
     }
   ],
   "maintenances": [
@@ -80,9 +83,9 @@
   ],
   "users": [
     {
-      "id": 1,
-      "email": "tunde@yahoo.com",
-      "password": "0123456789"
+      "email": "a.odeku@semicolon.africa",
+      "password": "mylove123",
+      "id": 1
     }
   ]
 }

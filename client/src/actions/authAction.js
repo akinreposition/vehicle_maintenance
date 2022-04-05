@@ -54,7 +54,7 @@ export const register = (formData) => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: REGISTER_FAIL,
-      payload: error.response.statusText
+      payload: error.response
     });
   }
 };
@@ -83,7 +83,7 @@ export const loginUser = (formData) => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: LOGIN_FAIL,
-      payload: error.response.statusText
+      payload: error.response
     });
   }
 };
