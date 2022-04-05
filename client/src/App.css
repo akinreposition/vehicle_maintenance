@@ -2,11 +2,21 @@
 
 /* Global Styles */
 :root {
-  --primary-color: #003699;
+  --primary-color: #f25111;
   --dark-color: #333333;
+  --black-color: #000000;
   --light-color: #f4f4f4;
-  --danger-color: #dc3545;
-  --success-color: #28a745;
+  --danger-color: #f2221d;
+  --success-color: #a63d14;
+  --gray-100-color: #f7fafc;
+  --gray-200-color: #edf2f7;
+  --gray-300-color: #e2e8f0;
+  --gray-400-color: #cbd5e0;
+  --gray-500-color: #a0aec0;
+  --gray-600-color: #718096;
+  --gray-700-color: #4a5568;
+  --gray-800-color: #2d3748;
+  --gray-900-color: #1a202c;
 }
 
 * {
@@ -43,9 +53,9 @@ img {
 /* Utilities */
 .container {
   max-width: 1100px;
-  margin: auto;
+  /* margin: auto; */
   overflow: hidden;
-  padding: 0 2rem;
+  padding: 0 .5rem;
 }
 
 /* Text Styles*/
@@ -71,7 +81,13 @@ img {
 }
 
 .text-primary {
-  color: var( --success-color);
+  color: var(--success-color);
+}
+.text-danger {
+  color: var(--danger-color);
+}
+.text-gray {
+  color: var(--gray-800-color);
 }
 
 .text-dark {
@@ -95,6 +111,7 @@ img {
   padding: 1rem;
   border: #ccc 1px dotted;
   margin: 0.7rem 0;
+  background: var(--gray-100-color);
 }
 
 /* List */
@@ -155,7 +172,7 @@ img {
   margin: 2rem 0;
 }
 .my-3 {
-  margin: 3rem 0;
+  margin: 0 3rem;
 }
 
 /* Grid */
@@ -235,7 +252,7 @@ img {
 .bg-primary,
 .badge-primary,
 .alert-primary {
-  background: var( --success-color);
+  background: var(--black-color);
   color: #fff;
 }
 

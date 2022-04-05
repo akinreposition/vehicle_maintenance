@@ -1,39 +1,45 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import TechSelectOptions from "../techs/TechSelectOptions";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { addLog } from "../../actions/logAction";
 import M from "materialize-css/dist/js/materialize.min.js";
+import { updateLog } from "../../actions/logAction";
 
-const AddLogModal = ({ addLog }) => {
+const EditLogModal = ({ current, updateLog }) => {
   const [message, setMessage] = useState("");
   const [attention, setAttention] = useState(false);
   const [technician, setTechnician] = useState("");
+
+  useEffect(() => {
+    if (current) {
+      setMessage(current.message);
+      setAttention(current.attention);
+      setTechnician(current.technician);
+    }
+  }, [current]);
 
   const onSubmit = (e) => {
     e.preventDefault();
     if (message === "" || technician === "") {
       M.toast({ html: "please enter a message and technician" });
     } else {
-      const newLog = {
-        attention,
+      const updatedCurrentLog = {
+        id: current.id,
         message,
+        attention,
         technician,
         date: new Date(),
       };
+      updateLog(updatedCurrentLog);
+      M.toast({ html: `Log updated by ${technician}` });
 
-      addLog(newLog);
-
-      M.toast({ html: `Log added by ${technician}` });
-
-      // Clear Fields
       setMessage("");
       setTechnician("");
       setAttention(false);
     }
   };
   return (
-    <div id="add-log-modal" className="modal" style={modalStyle}>
+    <div id="edit-log-modal" className="modal" style={modalStyle}>
       <div className="modal-content">
         <h4> Enter Vehicle Log</h4>
 
@@ -56,7 +62,7 @@ const AddLogModal = ({ addLog }) => {
             <select
               name="technician"
               value={technician}
-              className="browser default"
+              className="browser-default"
               onChange={(e) => setTechnician(e.target.value)}
             >
               <option value="" disabled>
@@ -96,12 +102,20 @@ const AddLogModal = ({ addLog }) => {
     </div>
   );
 };
-AddLogModal.propTypes = {
-  addLog: PropTypes.func.isRequired,
+
+EditLogModal.prototype = {
+  current: PropTypes.object,
+  updateLog: PropTypes.func.isRequired,
 };
 
 const modalStyle = {
   width: "75%",
   height: "75%",
 };
-export default connect(null, { addLog })(AddLogModal);
+
+const mapStateToProps = (state) => ({
+  current: state.log.current,
+});
+export default connect(mapStateToProps, {
+  updateLog,
+})(EditLogModal);

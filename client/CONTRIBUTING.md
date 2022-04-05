@@ -10,20 +10,20 @@ git pull origin dev1
 
 This process here should be able to guide you on how to contribute effectively to this project, follow the steps below. You should not be new to the git workflow process however if you still are, the guide should still be able to help you through the process.
 
-## Dev1 is the default branch.
+## main is the default branch.
 - Clone the repository.
 
 ```
  git clone https://github.com/akinreposition/vehicle-logger.git
 ```
 
-- Make the original akinreposition-dev1/full stack repo the remote origin (at origin)
+- Make the original akinreposition-main/full stack repo the remote origin (at origin)
 
 ```
 git remote add origin https://github.com/akinreposition/vehicle-logger.git
 ```
 
-- Create a branch FROM dev1, ALWAYS CREATE YOUR BRANCH FROM dev1,
+- Create a branch FROM main, ALWAYS CREATE YOUR BRANCH FROM main,
   the branch name should at least be meaningful, **make sure you have one story per branch (one(1) story === one(1) branch)**
 
 ```
@@ -36,7 +36,7 @@ After changes have been made do:
 git pull origin dev1
 ```
 
-Consistently pull from the dev1 branch to avoid not getting your pull request merged and to avoid conflicts.
+Consistently pull from the main branch to avoid not getting your pull request merged and to avoid conflicts.
 This way you can resolve conflicts from your local computer even before pushing always check what branch you are on when making changes
 
 - Make your changes, add your changes

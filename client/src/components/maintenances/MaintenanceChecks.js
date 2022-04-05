@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import RountlineItem from "./RountlineItem";
+import RountlineItem from "./MaintenanceItem";
 import Preloader from "../layout/Preloader";
 
-const RoutlineChecks = () => {
+const MaintenanceChecks = () => {
   const [maintenances, setMaintenances] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -26,7 +26,7 @@ const RoutlineChecks = () => {
   return (
     <ul className="collection with-header">
       <li className="collection-header">
-        <h4 className="center">Vehicle Daily Checks</h4>
+        <h5 className="center">Vehicle Maintenance Checks</h5>
       </li>
       {!loading && maintenances.length === 0 ? (
         <p className="center">No logs here....</p>
@@ -39,4 +39,4 @@ const RoutlineChecks = () => {
   );
 };
 
-export default RoutlineChecks;
+export default MaintenanceChecks;

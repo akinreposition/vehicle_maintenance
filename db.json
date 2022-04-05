@@ -1,11 +1,25 @@
 {
   "logs": [
     {
+      "id": 1,
+      "message": "Changed the oil filters on Toyota corrolla 2005",
+      "attention": false,
+      "date": "02-05-2012",
+      "technician": "Musa Mohammed"
+    },
+    {
+      "id": 2,
+      "message": "Engine servicing on Acura TX 2007",
       "attention": true,
-      "message": "green hummer van is loaded with grease",
+      "date": "12-06-2012",
+      "technician": "Fatai Balogun"
+    },
+    {
+      "attention": false,
+      "message": "body work",
       "technician": "Musa mohammed",
-      "date": "2022-04-05T14:03:48.663Z",
-      "id": 1
+      "date": "2022-03-21T12:30:14.564Z",
+      "id": 3
     }
   ],
   "vehicles": [
@@ -46,9 +60,6 @@
       "id": 3,
       "firstName": "Sokoto",
       "lastName": "Adewale"
-    },
-    {
-      "id": 4
     }
   ],
   "maintenances": [
@@ -83,9 +94,19 @@
   ],
   "users": [
     {
-      "email": "a.odeku@semicolon.africa",
-      "password": "mylove123",
-      "id": 1
+      "id": 1,
+      "email": "tunde@yahoo.com",
+      "password": "0123456789"
+    },
+    {
+      "email": "firstlast@mail.com",
+      "password": "firstlast",
+      "id": 2
+    },
+    {
+      "email": "firstlast@mail.com",
+      "password": "firstlast",
+      "id": 3
     }
   ]
 }
