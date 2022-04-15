@@ -22,7 +22,7 @@ const Main = () => {
       <Fragment>
         <Router>
           <Routes>
-            {/* <PrivateRoute path='/' element={<Home />} /> */}
+            {/* <PrivateRoute path='/' element={<LandingPage />} /> */}
             <Route path="/" element={<LandingPage />} />
             <Route path="/logs" element={<LogHome />} />
             <Route path="/maintenance" element={<RountlineChecks />} />

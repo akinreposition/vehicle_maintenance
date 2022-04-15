@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { deleteTechnicians } from "../../actions/technicianAction";
 import M from 'materialize-css/dist/js/materialize.min.js'
 
-const TechItem = ({ tech: { id, firstName, lastName }, deleteTechnician }) => {
+const TechItem = ({ tech: { id, firstName, lastName }, deleteTechnicians }) => {
 
   const onDelete = () => {
     deleteTechnicians(id);
@@ -13,7 +13,7 @@ const TechItem = ({ tech: { id, firstName, lastName }, deleteTechnician }) => {
   return (
     <li className="collection-item">
       <div>
-        {firstName} {lastName}
+        <mark>{firstName} {lastName}</mark>
         <a
           href="#!"
           className="secondary-content"

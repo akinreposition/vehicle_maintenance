@@ -8,14 +8,14 @@ const AddTechModal = ({ addTechnicians }) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
 
-  const onSubmit = () => {
-    // e.preventDefault();
+  const onSubmit = (e) => {
+    e.preventDefault();
     if (firstName === "" || lastName === "") {
       M.toast({ html: "please enter first and last name" });
     } else {
       addTechnicians({
         firstName,
-        lastName
+        lastName,
       });
       M.toast({ html: `${firstName} ${lastName} was added as a technician` });
 

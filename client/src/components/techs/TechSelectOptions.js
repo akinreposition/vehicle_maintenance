@@ -9,17 +9,16 @@ const TechSelectOptions = ({ getTechnicians, tech: { techs, loading } }) => {
     // eslint-disable-next-line
   }, []);
 
-  return (
-    (!loading || techs !== null) ||
-    techs.map((technician) => (
-      <option
-        key={technician.id}
-        value={` ${technician.firstName} ${technician.lastName}`}
-      >
-        {technician.firstName} {technician.lastName}
-      </option>
-    ))
-  );
+  return !loading
+    ? techs.length !== 0
+    : techs.map((technician) => (
+        <option
+          key={technician.id}
+          value={` ${technician.firstName} ${technician.lastName}`}
+        >
+          {technician.firstName} {technician.lastName}
+        </option>
+      ));
 };
 
 TechSelectOptions.propTypes = {

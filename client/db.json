@@ -1,11 +1,11 @@
 {
   "logs": [
     {
-      "attention": true,
+      "id": 1,
       "message": "green hummer van is loaded with grease",
+      "attention": true,
       "technician": "Musa mohammed",
-      "date": "2022-04-05T14:03:48.663Z",
-      "id": 1
+      "date": "2022-04-14T14:17:37.907Z"
     }
   ],
   "vehicles": [
@@ -38,16 +38,18 @@
       "lastName": "Mohammed"
     },
     {
-      "id": 2,
-      "firstName": "Fatai",
-      "lastName": "Balogun"
+      "firstName": "firstName",
+      "lastName": "lastName",
+      "id": 2
     },
     {
-      "id": 3,
-      "firstName": "Sokoto",
-      "lastName": "Adewale"
+      "firstName": "sule",
+      "lastName": "michael",
+      "id": 3
     },
     {
+      "firstName": "nonso",
+      "lastName": "jane",
       "id": 4
     }
   ],
@@ -86,6 +88,11 @@
       "email": "a.odeku@semicolon.africa",
       "password": "mylove123",
       "id": 1
+    },
+    {
+      "email": "firstlast@mail.com",
+      "password": "password123",
+      "id": 2
     }
   ]
 }

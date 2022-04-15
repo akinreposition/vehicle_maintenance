@@ -34,8 +34,11 @@ export const addTechnicians = (tech) => async (dispatch) => {
     const res = await fetch("/technicians", {
       method: "POST",
       body: JSON.stringify(tech),
+      headers: {
+        "Content-Type": "application/json",
+      },
     });
-    const data = res.json();
+    const data = await res.json();
 
     dispatch({
       type: ADD_TECH,
