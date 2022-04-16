@@ -1,4 +1,4 @@
 {
-    "mongoURL":"mongodb+srv://vehicleLogger:krd388yd@cluster0.v9qsq.mongodb.net/vehicleLogger?retryWrites=true&w=majority",
+    "mongoURL":"mongodb+srv://admin1:krd388yd@cluster0.c8vnk.mongodb.net/vehicle_logger?retryWrites=true&w=majority",
     "jwtSecret": "krd388yd@moonsmile"
 }
