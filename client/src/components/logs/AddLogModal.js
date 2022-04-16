@@ -56,7 +56,7 @@ const AddLogModal = ({ addLog }) => {
             <select
               name="technician"
               value={technician}
-              className="browser default"
+              className="browser-default"
               onChange={(e) => setTechnician(e.target.value)}
             >
               <option value="" disabled>

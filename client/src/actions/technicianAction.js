@@ -11,8 +11,8 @@ export const getTechnicians = () => async (dispatch) => {
   try {
     setLoading();
 
-    const res = await fetch("/technicians");
-    const data = res.json();
+    const response = await fetch("/technicians");
+    const data = await response.json();
 
     dispatch({
       type: GET_TECHS,
@@ -27,7 +27,7 @@ export const getTechnicians = () => async (dispatch) => {
 };
 
 //  Add technicians to server
-export const addTechnicians = (tech) => async (dispatch) => {
+export const addTechnician = (tech) => async (dispatch) => {
   try {
     setLoading();
 
@@ -53,11 +53,11 @@ export const addTechnicians = (tech) => async (dispatch) => {
 };
 
 //  Delete technician from server
-export const deleteTechnicians = (id) => async (dispatch) => {
+export const deleteTechnician = (id) => async (dispatch) => {
   try {
     setLoading();
 
-    await fetch(`/technicians/ ${id}`, {
+    await fetch(`/technicians/${id}`, {
       method: "DELETE",
     });
 
