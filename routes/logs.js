@@ -61,14 +61,14 @@ router.post(
   }
 );
 
-//  @route      PUT api/accounts/:id
-//  @desc       Update account
+//  @route      PUT api/logs/:id
+//  @desc       Update log
 //  @access     Private
 router.put('/:id', (req, res) => {
   res.send("Update log");
 });
 
-//  @route      DELETE api/log/:id
+//  @route      DELETE api/logs/:id
 //  @desc       Delete log
 //  @access     Private
 router.delete('/', (req, res) => {

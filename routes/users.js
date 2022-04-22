@@ -17,7 +17,7 @@ router.post(
     check("email", "Please add valid email").isEmail(),
     check(
       "password",
-      "Please enter a password with 6 or more characters"
+      "Please enter a password with min: 8 & max: 12 characters"
     ).isLength({ min: 8, max: 12 }),
   ],
   async (req, res) => {
@@ -58,15 +58,15 @@ router.post(
         payload,
         config.get("jwtSecret"),
         {
-          expiresIn: 360000,
+          expiresIn: 36000,
         },
         (err, token) => {
           if (err) throw err;
           res.json({ token });
         }
       );
-    } catch (err) {
-      console.error(err.message);
+    } catch (error) {
+      console.error(error.message);
       res.status(500).send("Server Error");
     }
   }
