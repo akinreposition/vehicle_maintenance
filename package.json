@@ -22,8 +22,7 @@
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
     "clientinstall": "npm install --prefix client",
-    "json-server": "json-server --watch db.json",
-    "dev": "concurrently \"npm start\" \"npm run json-server\"",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -36,5 +35,6 @@
   "bugs": {
     "url": "https://github.com/akinreposition/vehicle_maintenance/issues"
   },
-  "homepage": "https://github.com/akinreposition/vehicle_maintenance#readme"
+  "homepage": "https://github.com/akinreposition/vehicle_maintenance#readme",
+  "proxy": "http://localhost:5533"
 }

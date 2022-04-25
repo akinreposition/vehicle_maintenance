@@ -8,18 +8,14 @@ import M from "materialize-css/dist/js/materialize.min.js";
 const Login = ({
   authUser: { token, isAuthenticated, error },
   loginUser,
-  props,
 }) => {
   const navigate = useNavigate();
   useEffect(() => {
     if (isAuthenticated) {
-      setTimeout(() => {
-        navigate("/home");
-      }, 5000);
+      navigate("/home");
     }
 
     if (error === "Invalid Credentials") {
-      // setAlert(error, "danger");
       M.toast({ html: "Invalid Credentials" });
 
       clearErrors();
@@ -39,7 +35,7 @@ const Login = ({
   const onSubmit = (e) => {
     e.preventDefault();
     if (email === "" || password === "") {
-      // setAlert("Please fill fields", "danger");
+    
       M.toast({ html: "Please fill fields" });
     } else {
       const formData = {
@@ -100,4 +96,4 @@ Login.prototype = {
 const mapStateToProps = (state) => ({
   authUser: state.authUser,
 });
-export default connect(mapStateToProps, { loginUser })(Login);
+export default connect(mapStateToProps, { loginUser, clearErrors })(Login);

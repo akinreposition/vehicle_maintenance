@@ -11,6 +11,11 @@ import About from "./components/pages/About";
 import RountlineChecks from "./components/maintenances/MaintenanceChecks";
 import { Provider } from "react-redux";
 import store from "./store";
+import setAuthToken from "./utils/setAuthToken";
+
+if (localStorage.toke) {
+  setAuthToken(localStorage.token);
+}
 
 const Main = () => {
   useEffect(() => {
