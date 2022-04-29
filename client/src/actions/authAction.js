@@ -41,7 +41,7 @@ export const register = (formData) => async (dispatch) => {
   };
 
   try {
-    const res = await fetch.post("/api/newUser", config);
+    const res = await fetch.post("/api/users", config);
 
     const data = await res.json();
 
@@ -64,7 +64,7 @@ export const loginUser = (formData) => async (dispatch) => {
   try {
     setLoading();
 
-    const res = await fetch("/users", {
+    const res = await fetch("/api/auth", {
       method: "POST",
       body: JSON.stringify(formData),
       headers: {
