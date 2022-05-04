@@ -5,14 +5,11 @@ import { loginUser, clearErrors } from "../../actions/authAction";
 import PropTypes from "prop-types";
 import M from "materialize-css/dist/js/materialize.min.js";
 
-const Login = ({
-  authUser: { token, isAuthenticated, error },
-  loginUser,
-}) => {
+const Login = ({ authUser: { token, isAuthenticated, error }, loginUser }) => {
   const navigate = useNavigate();
   useEffect(() => {
     if (isAuthenticated) {
-      navigate("/home");
+      navigate("/logs");
     }
 
     if (error === "Invalid Credentials") {
@@ -35,7 +32,6 @@ const Login = ({
   const onSubmit = (e) => {
     e.preventDefault();
     if (email === "" || password === "") {
-    
       M.toast({ html: "Please fill fields" });
     } else {
       const formData = {

@@ -1,18 +1,18 @@
 {
   "logs": [
     {
+      "id": 2,
+      "message": "misturbish L200 has been serviced",
       "attention": false,
-      "message": "misturbish L200 needs washing",
-      "technician": " adam jane",
-      "date": "2022-04-16T16:45:57.231Z",
-      "id": 2
+      "technician": " itohan mercy",
+      "date": "2022-05-03T13:31:46.650Z"
     },
     {
+      "id": 3,
+      "message": "change the two front tyres of nissan micra",
       "attention": false,
-      "message": "change the two back tyres of nissan micra",
-      "technician": " sule eve",
-      "date": "2022-04-20T16:45:38.160Z",
-      "id": 3
+      "technician": " itohan mercy",
+      "date": "2022-04-29T10:26:41.165Z"
     },
     {
       "attention": true,
@@ -20,6 +20,27 @@
       "technician": " nonso emmanuel",
       "date": "2022-04-20T16:47:07.421Z",
       "id": 4
+    },
+    {
+      "id": 5,
+      "message": "new brakes need markman truck (fixed)",
+      "attention": false,
+      "technician": " sule eve",
+      "date": "2022-05-03T13:30:58.608Z"
+    },
+    {
+      "id": 6,
+      "message": "new kwara plate number needed for Honda accord",
+      "attention": true,
+      "technician": " nonso emmanuel",
+      "date": "2022-05-03T13:32:13.891Z"
+    },
+    {
+      "attention": false,
+      "message": "log message testing",
+      "technician": " ayofe nifemi",
+      "date": "2022-05-02T11:45:16.698Z",
+      "id": 7
     }
   ],
   "vehicles": [
@@ -60,6 +81,16 @@
       "firstName": "nonso",
       "lastName": "emmanuel",
       "id": 3
+    },
+    {
+      "firstName": "itohan",
+      "lastName": "mercy",
+      "id": 4
+    },
+    {
+      "firstName": "ayofe",
+      "lastName": "nifemi",
+      "id": 5
     }
   ],
   "maintenances": [
@@ -90,6 +121,20 @@
       "id": 1,
       "email": "musa@yahoo.com",
       "password": "0123456789"
+    },
+    {
+      "firstName": "customer1",
+      "lastName": "ab",
+      "email": "customer1@yahoo.com",
+      "password": "customerab",
+      "id": 2
+    },
+    {
+      "firstName": "amaka",
+      "lastName": "chinwe",
+      "email": "amakachinwe@yahoo.com",
+      "password": "chinwe456",
+      "id": 3
     }
   ],
   "users": [
@@ -99,8 +144,8 @@
       "id": 1
     },
     {
-      "email": "firstlast@mail.com",
-      "password": "password123",
+      "email": "amakachinwe@yahoo.com",
+      "password": "chinwe456",
       "id": 2
     }
   ]

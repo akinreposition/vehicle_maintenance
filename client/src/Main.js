@@ -8,7 +8,7 @@ import LandingPage from "./components/pages/LandingPage";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import About from "./components/pages/About";
-import RountlineChecks from "./components/maintenances/MaintenanceChecks";
+import Maintenance from "./components/maintenances/Maintenance";
 import { Provider } from "react-redux";
 import store from "./store";
 import setAuthToken from "./utils/setAuthToken";
@@ -30,7 +30,7 @@ const Main = () => {
             {/* <PrivateRoute path='/' element={<LandingPage />} /> */}
             <Route path="/" element={<LandingPage />} />
             <Route path="/logs" element={<LogHome />} />
-            <Route path="/maintenance" element={<RountlineChecks />} />
+            <Route path="/maintenance" element={<Maintenance />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
             <Route path="/about" element={<About />} />
