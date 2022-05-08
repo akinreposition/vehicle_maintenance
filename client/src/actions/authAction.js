@@ -20,8 +20,8 @@ export const loadUser = async (dispatch) => {
   }
 
   try {
-    const res = await axios.get("/users");
-    // const res = await axios.get("/api/users");
+    // const res = await axios.get("/users");
+    const res = await axios.get("/api/users");
 
     dispatch({
       type: USER_LOADED,
@@ -34,16 +34,16 @@ export const loadUser = async (dispatch) => {
 
 // Register User
 export const register = (formData) => async (dispatch) => {
-  // const config = {
-  //   body: JSON.stringify(formData),
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //   },
-  // };
+  const config = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json ",
+    },
+    body: JSON.stringify(formData),
+  };
 
   try {
-    const res = await axios.post("/newUser", formData);
-    // const res = await axios.post("/api/users", formData);
+    const res = await fetch("/api/users", config);
 
     const data = await res.json();
 
@@ -63,21 +63,11 @@ export const register = (formData) => async (dispatch) => {
 
 // Login User
 export const loginUser = (formData) => async (dispatch) => {
+ 
   try {
     setLoading();
 
-    const res = await axios.post(
-      "/users",
-      formData
-      //  {
-      //   body: JSON.stringify(formData),
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      // }
-    );
-
-    // const res = await axios.post("/api/auth", formData);
+    const res = await axios.post("/api/auth", formData);
     const data = await res.json();
 
     dispatch({

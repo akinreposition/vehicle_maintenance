@@ -45,7 +45,7 @@ const AddMaintenanceModal = ({ addMaintenance }) => {
 
       addMaintenance(newMaintenace);
 
-      M.toast({ html: `Maintenace checker by ${driver}` });
+      M.toast({ html: `Maintenace checked by ${driver}` });
 
       // Clear Fields
       setDailyChecks({
@@ -69,7 +69,7 @@ const AddMaintenanceModal = ({ addMaintenance }) => {
               onChange={onChange}
             />
             <label htmlFor="message" className="active">
-              State of Vehicle
+              Vehicle state
             </label>
           </div>
         </div>
@@ -131,6 +131,23 @@ const AddMaintenanceModal = ({ addMaintenance }) => {
                   className="radio"
                   checked={radiatorWater}
                   onChange={(e) => setRadiatorWater(!radiatorWater)}
+                />
+              </label>
+            </p>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="input-field">
+            <p>
+              <label>
+                {" "}
+                Tyre
+                <input
+                  type="radio"
+                  className="radio"
+                  checked={tyre}
+                  onChange={(e) => setTyre(tyre)}
                 />
               </label>
             </p>

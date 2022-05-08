@@ -1,4 +1,4 @@
-// import axios from "axios";
+import axios from "axios";
 import {
   GET_LOGS,
   SET_LOADING,
@@ -16,7 +16,7 @@ export const getLogs = () => async (dispatch) => {
   try {
     setLoading();
     // fetch is used for hit the endpoint using json server
-    const res = await fetch("/logs");
+    const res = await fetch("/api/logs");
 
     // axios is used to the endpoint & getting data from mongo.db
     // const res = await axios.get("/api/logs");
@@ -39,15 +39,16 @@ export const addLog = (log) => async (dispatch) => {
   try {
     setLoading();
     //  fetch is used to hit json server endpoint
-    const res = await fetch("/logs", {
-      method: "POST",
-      body: JSON.stringify(log),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    // const res = await fetch("/logs", {
+    //   method: "POST",
+    //   body: JSON.stringify(log),
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    // });
+
     // axios is used to the endpoint & getting data from mongo.db
-    // const res = await axios.post("/api/logs", log );
+    const res = await axios.post("/api/logs", log);
     const data = await res.json();
 
     dispatch({
@@ -67,10 +68,10 @@ export const deleteLogs = (id) => async (dispatch) => {
   try {
     setLoading();
     //  fetch is used to hit json server endpoint
-    await fetch.delete(`/logs/${id}`);
+    // await fetch.delete(`/logs/${id}`);
 
     // axios is used to the endpoint & getting data from mongo.db
-    // await axios.delete( `/logs/${id}`);
+    await axios.delete(`/api/logs/${id}`);
 
     dispatch({
       type: DELETE_LOG,
@@ -90,16 +91,16 @@ export const updateLog = (log) => async (dispatch) => {
     setLoading();
 
     //  fetch is used to hit json server endpoint
-    const res = await fetch(`/logs/${log.id}`, {
-      method: "PUT",
-      body: JSON.stringify(log),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    // const res = await fetch(`/logs/${log.id}`, {
+    //   method: "PUT",
+    //   body: JSON.stringify(log),
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    // });
 
     // axios is used to the endpoint & getting data from mongo.db
-    // const res = await axios.put(`/logs/${log.id}`, log);
+    const res = await axios.put(`/api/logs/${log.id}`, log);
 
     const data = await res.json();
 
@@ -120,7 +121,7 @@ export const searchLogs = (text) => async (dispatch) => {
   try {
     setLoading();
 
-    const res = await fetch(`/logs?q=${text}`);
+    const res = await fetch(`/api/logs?q=${text}`);
     const data = await res.json();
 
     dispatch({

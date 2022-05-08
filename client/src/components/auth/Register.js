@@ -18,7 +18,7 @@ const Register = ({
     if (error === " User already exists") {
       M.toast({ html: "User already exists" });
       clearErrors();
-    }
+    } 
     // eslint-disable-next-line
   }, [error, isAuthenticated, navigate]);
 

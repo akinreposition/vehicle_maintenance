@@ -1,3 +1,4 @@
+// import axios from "axios";
 import {
   GET_TECHS,
   ADD_TECH,
@@ -11,7 +12,7 @@ export const getTechnicians = () => async (dispatch) => {
   try {
     setLoading();
 
-    const response = await fetch("/technicians");
+    const response = await fetch("/api/technician");
     const data = await response.json();
 
     dispatch({
@@ -31,7 +32,7 @@ export const addTechnician = (tech) => async (dispatch) => {
   try {
     setLoading();
 
-    const res = await fetch("/technicians", {
+    const res = await fetch("/api/technician", {
       method: "POST",
       body: JSON.stringify(tech),
       headers: {
@@ -57,7 +58,7 @@ export const deleteTechnician = (id) => async (dispatch) => {
   try {
     setLoading();
 
-    await fetch(`/technicians/${id}`, {
+    await fetch(`/api/technician/${id}`, {
       method: "DELETE",
     });
 
