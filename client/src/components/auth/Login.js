@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 import { connect } from "react-redux";
 import { loginUser, clearErrors } from "../../actions/authAction";
 import PropTypes from "prop-types";
 import M from "materialize-css/dist/js/materialize.min.js";
+import NavBar from "../layout/NavBar";
 
-const Login = ({ authUser: { token, isAuthenticated, error }, loginUser }) => {
-  const navigate = useNavigate();
+const Login = ({ authUser: { isAuthenticated, error }, loginUser }) => {
+  let navigate = useNavigate();
   useEffect(() => {
     if (isAuthenticated) {
       navigate("/logs");
@@ -32,14 +33,12 @@ const Login = ({ authUser: { token, isAuthenticated, error }, loginUser }) => {
   const onSubmit = (e) => {
     e.preventDefault();
     if (email === "" || password === "") {
-      M.toast({ html: "Please fill fields" });
+      M.toast({ html: "Please fill all fields" });
     } else {
-      const formData = {
+      loginUser({
         email,
         password,
-      };
-      console.log(formData);
-      loginUser(formData);
+      });
     }
     setUser({
       email: "",
@@ -47,6 +46,8 @@ const Login = ({ authUser: { token, isAuthenticated, error }, loginUser }) => {
     });
   };
   return (
+    <>
+    <NavBar />
     <div className="form-container">
       <h3>
         Account <span className="text-primary">Login</span>
@@ -81,6 +82,8 @@ const Login = ({ authUser: { token, isAuthenticated, error }, loginUser }) => {
         />
       </form>
     </div>
+    </>
+    
   );
 };
 

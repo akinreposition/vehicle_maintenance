@@ -20,8 +20,7 @@ export const loadUser = async (dispatch) => {
   }
 
   try {
-    // const res = await axios.get("/users");
-    const res = await axios.get("/api/users");
+    const res = await axios.get("/api/auth");
 
     dispatch({
       type: USER_LOADED,
@@ -35,15 +34,12 @@ export const loadUser = async (dispatch) => {
 // Register User
 export const register = (formData) => async (dispatch) => {
   const config = {
-    method: "POST",
     headers: {
-      "Content-Type": "application/json ",
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify(formData),
   };
-
   try {
-    const res = await fetch("/api/users", config);
+    const res = await axios.post("/api/users", formData, config);
 
     const data = await res.json();
 
@@ -63,11 +59,15 @@ export const register = (formData) => async (dispatch) => {
 
 // Login User
 export const loginUser = (formData) => async (dispatch) => {
- 
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
   try {
     setLoading();
 
-    const res = await axios.post("/api/auth", formData);
+    const res = await axios.post("/api/auth", formData, config);
     const data = await res.json();
 
     dispatch({

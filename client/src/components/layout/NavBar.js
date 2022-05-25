@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { logout } from "../../actions/authAction";
 
@@ -12,7 +12,7 @@ const NavBar = ({ title, icon, logout }) => {
   // const authLinks = (
   //   <Fragment>
   //     <li>
-  //       Hello 
+  //       Hello
   //       {/* {user && user.name} */}
   //     </li>
   //     <li>
@@ -27,17 +27,26 @@ const NavBar = ({ title, icon, logout }) => {
   // const guestLinks = (
   //   <Fragment>
   //     <li>
-  //       <Link to="/register">Register</Link>
-  //     </li>
-  //     {"|"}
-  //     <li>
-  //       <Link to="/login">Login</Link>
-  //     </li>
+  //     <Link to="/register">Register</Link>
+  //   </li>
+  //   {"|"}
+  //   <li>
+  //     <Link to="/login">Login</Link>
+  //   </li>
   //   </Fragment>
   // );
   return (
     <div className="navbar bg-primary">
       <h6>{title}</h6>
+      <ul className="text-right">
+        <li>
+          <Link to="/register">Register</Link>
+        </li>
+        {"|"}
+        <li>
+          <Link to="/login">Login</Link>
+        </li>
+      </ul>
       {/* <ul>{isAuthenticated ? authLinks : guestLinks}</ul> */}
     </div>
   );
@@ -51,7 +60,7 @@ NavBar.propTypes = {
 
 NavBar.defaultProps = {
   title: "Vehicle Maintenance Log",
-  icon: ""
+  icon: "",
 };
 
 const mapStateToProps = (state) => ({

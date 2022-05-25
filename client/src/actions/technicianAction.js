@@ -1,4 +1,4 @@
-// import axios from "axios";
+import axios from "axios";
 import {
   GET_TECHS,
   ADD_TECH,
@@ -12,7 +12,8 @@ export const getTechnicians = () => async (dispatch) => {
   try {
     setLoading();
 
-    const response = await fetch("/api/technician");
+    // const response = await fetch("/api/technician");
+    const response = await axios.get("/api/technician");
     const data = await response.json();
 
     dispatch({

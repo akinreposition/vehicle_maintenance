@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 import { clearErrors, register } from "../../actions/authAction";
 import PropTypes from "prop-types";
 import M from "materialize-css/dist/js/materialize.min.js";
+import NavBar from "../layout/NavBar";
 
 const Register = ({
   authUser: { isAuthenticated, error },
   register,
   clearErrors,
 }) => {
-  const navigate = useNavigate();
+  let navigate = useNavigate();
   useEffect(() => {
     if (isAuthenticated) {
       navigate("/login");
@@ -18,7 +19,7 @@ const Register = ({
     if (error === " User already exists") {
       M.toast({ html: "User already exists" });
       clearErrors();
-    } 
+    }
     // eslint-disable-next-line
   }, [error, isAuthenticated, navigate]);
 
@@ -46,94 +47,94 @@ const Register = ({
     } else if (password !== password2) {
       M.toast({ html: "Passwords do not match!" });
     } else {
-      const formData = {
+      register({
         firstName,
         lastName,
         email,
         password,
-      };
-      register(formData);
-      console.log(formData);
-
-      setUser({
-        firstName: "",
-        lastName: "",
-        email: "",
-        password: "",
-        password2: "",
       });
     }
+    setUser({
+      firstName: "",
+      lastName: "",
+      email: "",
+      password: "",
+      password2: "",
+    });
   };
   return (
-    <div className="form-container">
-      <h3>
-        <span className="text-primary">Register</span> Account
-      </h3>
-      <form onSubmit={onSubmit}>
-        <div className="form-group">
-          <input
-            type="text"
-            name="firstName"
-            placeholder="First Name"
-            value={firstName}
-            onChange={onChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="text"
-            name="lastName"
-            placeholder="Last Name"
-            value={lastName}
-            onChange={onChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={email}
-            onChange={onChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="password"
-            placeholder="Password"
-            name="password"
-            value={password}
-            onChange={onChange}
-            required
-            minLength="8"
-            maxLength="12"
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="password"
-            placeholder="Password2"
-            name="password2"
-            value={password2}
-            onChange={onChange}
-            required
-            minLength="6"
-            maxLength="12"
-          />
-        </div>
-        <button
-          type="submit"
-          value="Register"
-          className="btn btn-primary btn-block"
-        >
-          {" "}
-          Register
-        </button>
-      </form>
-    </div>
+    <>
+      <NavBar />
+      <div className="form-container">
+        <h3>
+          <span className="text-primary">Register</span> Account
+        </h3>
+        <form onSubmit={onSubmit}>
+          <div className="form-group">
+            <input
+              type="text"
+              name="firstName"
+              placeholder="First Name"
+              value={firstName}
+              onChange={onChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="text"
+              name="lastName"
+              placeholder="Last Name"
+              value={lastName}
+              onChange={onChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={email}
+              onChange={onChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="password"
+              placeholder="Password"
+              name="password"
+              value={password}
+              onChange={onChange}
+              required
+              minLength="8"
+              maxLength="12"
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="password"
+              placeholder="Password2"
+              name="password2"
+              value={password2}
+              onChange={onChange}
+              required
+              minLength="6"
+              maxLength="12"
+            />
+          </div>
+          <button
+            type="submit"
+            value="Register"
+            className="btn btn-primary btn-block"
+          >
+            {" "}
+            Register
+          </button>
+        </form>
+      </div>
+    </>
   );
 };
 

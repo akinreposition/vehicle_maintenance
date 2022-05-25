@@ -18,41 +18,40 @@ const initialState = {
 };
 
 export const logReducer = (state = initialState, action) => {
-  switch (action.type) {
+  const { payload, type } = action;
+  switch (type) {
     case GET_LOGS:
       return {
         ...state,
-        logs: action.payload,
+        logs: payload,
         loading: false,
       };
     case ADD_LOG:
       return {
         ...state,
-        logs: [...state.logs, action.payload],
+        logs: [...state.logs, payload],
         loading: false,
       };
     case DELETE_LOG:
       return {
         ...state,
-        logs: state.logs.filter((log) => log.id !== action.payload),
+        logs: state.logs.filter((log) => log.id !== payload),
         loading: false,
       };
     case SEARCH_LOGS:
       return {
         ...state,
-        logs: action.payload,
+        logs: payload,
       };
     case UPDATE_LOG:
       return {
         ...state,
-        logs: state.logs.map((log) =>
-          log.id === action.payload.id ? action.payload : log
-        ),
+        logs: state.logs.map((log) => (log.id === payload.id ? payload : log)),
       };
     case SET_CURRENT:
       return {
         ...state,
-        current: action.payload,
+        current: payload,
       };
     case CLEAR_CURRENT:
       return {
@@ -65,10 +64,9 @@ export const logReducer = (state = initialState, action) => {
         loading: true,
       };
     case LOGS_ERROR:
-      // console.error(action.payload);
       return {
         ...state,
-        error: action.payload,
+        error: payload,
       };
     default:
       return state;

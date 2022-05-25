@@ -13,23 +13,24 @@ const initialState = {
 };
 
 export const technicianReducer = (state = initialState, action) => {
-  switch (action.type) {
+  const { payload, type } = action;
+  switch (type) {
     case GET_TECHS:
       return {
         ...state,
-        techs: action.payload,
+        techs: payload,
         loading: false,
       };
     case ADD_TECH:
       return {
         ...state,
-        techs: [...state.techs, action.payload],
+        techs: [...state.techs, payload],
         loading: false,
       };
     case DELETE_TECH:
       return {
         ...state,
-        techs: state.techs.filter((tech) => tech.id !== action.payload),
+        techs: state.techs.filter((tech) => tech.id !== payload),
         loading: false,
       };
     case SET_LOADING:
@@ -40,7 +41,7 @@ export const technicianReducer = (state = initialState, action) => {
     case TECHS_ERROR:
       return {
         ...state,
-        error: action.payload,
+        error: payload,
         loading: false,
       };
     default:
