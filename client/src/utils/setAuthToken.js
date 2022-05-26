@@ -1,4 +1,5 @@
 import axios from "axios";
+
 // set the authentication token to header
 const setAuthToken = (token) => {
   if (token) {
