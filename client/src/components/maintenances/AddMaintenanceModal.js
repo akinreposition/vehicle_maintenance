@@ -1,194 +1,186 @@
-import React, { useState } from "react";
-import TechSelectOptions from "../techs/TechSelectOptions";
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
-import { addMaintenance } from "../../actions/maintenanceAction";
+import React, { Fragment, useState } from "react";
+import car_inspection from "../../asset/car_inspection.jpg";
 import M from "materialize-css/dist/js/materialize.min.js";
 
-const AddMaintenanceModal = ({ addMaintenance }) => {
-  const [attention, setAttention] = useState(false);
-  const [radiatorWater, setRadiatorWater] = useState(false);
-  const [tyre, setTyre] = useState(true);
-  const [engineOil, setEngineOil] = useState(true);
-  const [headLight, setHeadLight] = useState(true);
-
-  const [dailyChecks, setDailyChecks] = useState({
+const AddMaintenanceModal = () => {
+  const [vehicleInspection, setVehicleInspection] = useState({
     driver: "",
-    technician: "",
-    mileage: "",
-    message: "",
+    vehicleName: "",
+    vehicleModel: "",
+    plateNumber: "",
+    tyres: "",
+    engineOil: "",
+    radiatorWater: "",
   });
-  const onChange = (e) =>
-    setDailyChecks({ ...dailyChecks, [e.target.name]: e.target.value });
+  const {
+    driver,
+    vehicleName,
+    vehicleModel,
+    plateNumber,
+    tyres,
+    engineOil,
+    radiatorWater,
+  } = vehicleInspection;
 
-  const { driver, mileage, message, technician } = dailyChecks;
+  const onChange = (e) =>
+    setVehicleInspection({
+      ...vehicleInspection,
+      [e.target.name]: e.target.value,
+    });
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (message === "") {
-      M.toast({ html: "please enter a message" });
-    } else if (driver === "") {
-      M.toast({ html: "please enter a driver name" });
-    } else if (mileage === "") {
-      M.toast({ html: "please enter a mileage" });
+    if (driver === "") {
+      M.toast({ html: "Input driver name" });
     } else {
-      const newMaintenace = {
-        attention,
-        message,
-        driver,
-        radiatorWater,
-        tyre,
-        engineOil,
-        headLight,
-        date: new Date(),
-      };
-
-      addMaintenance(newMaintenace);
-
-      M.toast({ html: `Maintenace checked by ${driver}` });
-
-      // Clear Fields
-      setDailyChecks({
-        driver: "",
-        mileage: "",
-        message: "",
-      });
+      console.log(driver, vehicleName, vehicleModel, plateNumber);
     }
+    setVehicleInspection({
+      driver: "",
+      vehicleName: "",
+      vehicleModel: "",
+      plateNumber: "",
+      tyres: "",
+      engineOil: "",
+      radiatorWater: "",
+    });
   };
   return (
-    <div id="add-log-modal" className="modal" style={modalStyle}>
-      <div className="modal-content">
-        <h4> Vehicle Daily Check</h4>
-
-        <div className="row>">
-          <div className="input-field">
-            <input
-              type="text"
-              name="message"
-              value={message}
-              onChange={onChange}
-            />
-            <label htmlFor="message" className="active">
-              Vehicle state
-            </label>
-          </div>
+    <Fragment>
+      <h6 className="text-center"> Vehicle Status</h6>
+      <div className="grid-2">
+        <div className="py-3">
+          <img
+            src={car_inspection}
+            width="auto"
+            height="auto"
+            alt="vehicle inspection"
+          />
         </div>
+        <div >
+          <section className="grid-2" style={modalStyle}>
+            <form className="m-card">
+              <span>
+                <div className="row">
+                  <div className="form-group">
+                    <label htmlFor="driver">Driver Name</label>
+                    <input
+                      type="text"
+                      name="driver"
+                      value={driver}
+                      onChange={onChange}
+                      placeholder="e.g John Smith"
+                      required
+                    />
+                  </div>
+                </div>
 
-        <div className="row>">
-          <div className="input-field">
-            <input
-              type="number"
-              name="mileage"
-              value={mileage}
-              onChange={onChange}
-            />
-            <label htmlFor="mileage" className="active">
-              Mileage
-            </label>
-          </div>
-        </div>
+                <div className="row">
+                  <div className="form-group">
+                    <label htmlFor="driver">Vehicle Name</label>
+                    <input
+                      type="text"
+                      name="vehicleName"
+                      value={vehicleName}
+                      onChange={onChange}
+                      placeholder="e.g Lexus Rx350"
+                      required
+                    />
+                  </div>
+                </div>
 
-        <div className="row">
-          <div className="input-field">
-            <select
-              name="driver"
-              value={driver}
-              className="browser-default"
-              onChange={onChange}
-            >
-              <option value="" disabled>
-                Select Driver
-              </option>
-              <TechSelectOptions />
-            </select>
-          </div>
-        </div>
+                <div className="row">
+                  <div className="form-group">
+                    <label htmlFor="driver">Vehicle model</label>
+                    <input
+                      type="number"
+                      name="vehicleModel"
+                      value={vehicleModel}
+                      onChange={onChange}
+                      placeholder="e.g 2015"
+                      required
+                    />
+                  </div>
+                </div>
 
-        <div className="row">
-          <div className="input-field">
-            <select
-              name="tehcnician"
-              value={technician}
-              className="browser-default"
-              onChange={onChange}
-            >
-              <option value="" disabled>
-                Select Technician
-              </option>
-              <TechSelectOptions />
-            </select>
-          </div>
-        </div>
+                <div className="row">
+                  <div className="form-group">
+                    <label htmlFor="driver">Plate Number</label>
+                    <input
+                      type="text"
+                      name="plateNumber"
+                      value={plateNumber}
+                      onChange={onChange}
+                      placeholder="e.g KJA123 EP"
+                      required
+                    />
+                  </div>
+                </div>
+              </span>
+              <span>
+                <div className="row">
+                  <div className="form-group">
+                    <label htmlFor="driver">Engine Oil</label>
+                    <input
+                      type="text"
+                      name="engineOil"
+                      value={engineOil}
+                      onChange={onChange}
+                      placeholder="e.g Good, poor, Bad"
+                      required
+                    />
+                  </div>
+                </div>
 
-        <div className="row">
-          <div className="input-field">
-            <p>
-              <label>
-                {" "}
-                Radiator
-                <input
-                  type="radio"
-                  className="radio"
-                  checked={radiatorWater}
-                  onChange={(e) => setRadiatorWater(!radiatorWater)}
-                />
-              </label>
-            </p>
-          </div>
-        </div>
+                <div className="row">
+                  <div className="form-group">
+                    <label htmlFor="driver">Radiator Water</label>
+                    <input
+                      type="text"
+                      name="radiatorWater"
+                      value={radiatorWater}
+                      onChange={onChange}
+                      placeholder="e.g full / empty"
+                      required
+                    />
+                  </div>
+                </div>
 
-        <div className="row">
-          <div className="input-field">
-            <p>
-              <label>
-                {" "}
-                Tyre
-                <input
-                  type="radio"
-                  className="radio"
-                  checked={tyre}
-                  onChange={(e) => setTyre(tyre)}
-                />
-              </label>
-            </p>
-          </div>
-        </div>
+                <div className="row">
+                  <div className="form-group">
+                    <label htmlFor="driver">Tyres</label>
+                    <input
+                      type="text"
+                      name="tyres"
+                      value={tyres}
+                      onChange={onChange}
+                      placeholder="e.g Good, poor, Bad"
+                      required
+                    />
+                  </div>
+                </div>
+              </span>
 
-        <div className="row">
-          <div className="input-field">
-            <p>
-              <label>
-                <input
-                  type="checkbox"
-                  className="filled-in"
-                  checked={attention}
-                  onChange={(e) => setAttention(!attention)}
-                />
-                <span>Needs Attention</span>
-              </label>
-            </p>
-          </div>
-        </div>
-      </div>
-      <div className="modal-footer">
-        <a
-          href="#!"
-          onClick={onSubmit}
-          className="modal-close waves-effect green
+              <div className="modal-footer">
+                <a
+                  href="#!"
+                  onClick={onSubmit}
+                  className="modal-close waves-effect green
           btn"
-        >
-          Enter
-        </a>
+                >
+                  Enter
+                </a>
+              </div>
+            </form>
+          </section>
+        </div>
       </div>
-    </div>
+    </Fragment>
   );
-};
-AddMaintenanceModal.propTypes = {
-  addMaintenance: PropTypes.func.isRequired,
 };
 
 const modalStyle = {
-  width: "75%",
+  width: "90%",
   height: "75%",
 };
-export default connect(null, { addMaintenance })(AddMaintenanceModal);
+export default AddMaintenanceModal;

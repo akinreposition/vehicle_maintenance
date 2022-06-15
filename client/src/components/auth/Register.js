@@ -21,7 +21,7 @@ const Register = ({
       clearErrors();
     }
     // eslint-disable-next-line
-  }, [error, isAuthenticated, navigate]);
+  }, [error, isAuthenticated]);
 
   const [user, setUser] = useState({
     firstName: "",

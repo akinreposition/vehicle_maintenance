@@ -37,7 +37,9 @@ const NavBar = ({ title, icon, logout }) => {
   // );
   return (
     <div className="navbar bg-primary">
-      <h6>{title}</h6>
+      <Link to="/">
+        <h6>{title}</h6>
+      </Link>
       <ul className="text-right">
         <li>
           <Link to="/register">Register</Link>
