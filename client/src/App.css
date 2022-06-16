@@ -353,10 +353,12 @@ button {
 
 .form-group {
   margin: 1.2rem 0;
+  color: #fff;
 }
 
 .form-group input {
   margin: 0.2rem 0;
+  color: #fff;
 }
 
 .form-container {

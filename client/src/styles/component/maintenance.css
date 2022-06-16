@@ -4,12 +4,19 @@
     /* flex: auto; */
 }
 
+.my-6 {
+    margin: 6rem 0;
+  }
+
 /* maintenance Cards */
 .m-card {
+    color: white;
+    max-width: 500px;
     padding: 1.5rem;
     border: #ccc 1px ;
     margin: 0.7rem 0;
-    background: var(--light-color);
+    border-radius: 7px;
+    background: var(--gray-800-color);
   }
 
 /* Mobile Styles */
