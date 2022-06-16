@@ -77,7 +77,7 @@ const AddMaintenanceModal = () => {
         style={{ fontWeight: "18px" }}
       >
         {" "}
-        VEHICLE STATUS
+        Vehicle Status
       </h5>
       <div className="grid-2">
         <div className="my-6 py-3">
@@ -103,7 +103,7 @@ const AddMaintenanceModal = () => {
             </div>
 
             <div className="form-group">
-              <label htmlFor="driver">Vehicle Name</label>
+              <label htmlFor="vehicleName">Vehicle Name</label>
               <input
                 type="text"
                 name="vehicleName"
@@ -115,7 +115,7 @@ const AddMaintenanceModal = () => {
             </div>
 
             <div className="form-group">
-              <label htmlFor="driver">Vehicle model</label>
+              <label htmlFor="vehicleModel">Vehicle model</label>
               <input
                 type="number"
                 name="vehicleModel"
@@ -127,7 +127,7 @@ const AddMaintenanceModal = () => {
             </div>
 
             <div className="form-group">
-              <label htmlFor="driver">Plate Number</label>
+              <label htmlFor="plateNumber">Plate Number</label>
               <input
                 type="text"
                 name="plateNumber"
@@ -139,7 +139,7 @@ const AddMaintenanceModal = () => {
             </div>
 
             <div className="form-group">
-              <label htmlFor="driver">Engine Oil</label>
+              <label htmlFor="engineOil">Engine Oil</label>
               <input
                 type="text"
                 name="engineOil"
@@ -151,7 +151,7 @@ const AddMaintenanceModal = () => {
             </div>
 
             <div className="form-group">
-              <label htmlFor="driver">Radiator Water</label>
+              <label htmlFor="radiatorWater">Radiator Water</label>
               <input
                 type="text"
                 name="radiatorWater"
@@ -163,7 +163,7 @@ const AddMaintenanceModal = () => {
             </div>
 
             <div className="form-group">
-              <label htmlFor="driver">Tyres</label>
+              <label htmlFor="tyres">Tyres</label>
               <input
                 type="text"
                 name="tyres"
@@ -178,8 +178,9 @@ const AddMaintenanceModal = () => {
               <a
                 href="#!"
                 onClick={onSubmit}
-                className="modal-close waves-effect green
-                  btn"
+                className="btn-block btn"
+                // className="modal-close waves-effect green
+                //   btn"
               >
                 Enter
               </a>

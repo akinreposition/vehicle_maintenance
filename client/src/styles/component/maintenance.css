@@ -1,7 +1,7 @@
 
 .head-maintenance {
     color: var(--gray-700-color);
-    /* flex: auto; */
+    text-decoration:underline;
 }
 
 .my-6 {
@@ -24,8 +24,11 @@
     div > img {
         display: none;
     }
-
+    h5 > div .grid2  {
+        display: none !important;
+        margin: 0px 0px;
+    }
     .m-card {
-        margin-left: 1.5rem;
+        margin: .5rem .5rem;
     }
 }
